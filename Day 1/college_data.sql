@@ -2,16 +2,14 @@ create database college ;
 
 use college ;
 
-create table student (
-  roll_no int primary key ,
-  name varchar(5) ,
-  marks int not null default 50,
-  garde varchar(1),
-  city varchar(20)
+create table employee (
+	empId int primary key ,
+	eName varchar(20),
+    salary int ,
+    dept varchar(20) ,
+    gender char(1)
 );
 
+insert into employee values(1 , 'yasir' , 20000 , 'SE' , 'M') , (2, 'Hira' , 300 , 'ME' , 'F' );  
 
-insert into student (roll_no , name , marks , garde , city ) values (1 , 'karim' , 400 , 'A' , 'Karachi') ;
-
-select * from student;
-
+select eName , salary from employee where length(eName) >= 3 and substring(eName , 2, length(eName)-2 ) = 'asi'  ; 
